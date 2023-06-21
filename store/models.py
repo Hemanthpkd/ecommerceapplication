@@ -24,8 +24,8 @@ class Products(models.Model):
         return self.product_name
     
     @property
-    def offer_price(self):
-        offs=Offers.objects.filter(product=self)
+    def offer_price(self):  #self means one single product
+        offs=Offers.objects.filter(product=self)  #this line is to check if the product has offer
         if offs:
             off=offs[0]
             return self.price-off.discount

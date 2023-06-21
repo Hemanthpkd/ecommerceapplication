@@ -35,9 +35,9 @@
         <div><h2>average rating {{product.avg_rating}}</h2></div>
         {%for r in product.p_reviews%}
         <div class="border rounder-pill">
-            comment.{{r.comment}}
-            rating.{{r.rating}}
-            user.{{r.user}}
+            COMMENT: {{r.comment}}
+            RATING: {{r.rating}}
+            by {{r.user}}
         </div>
         {%endfor%}
     </div>

@@ -13,8 +13,13 @@
    {% if messages %}
    {% for message in messages %}
        <div class="text-center alert alert-{{ message.tags }}">
+        <!-- The message.tags attribute is used to determine the CSS class for the 
+          alert box based on the message type (e.g., success, error, warning, etc.). -->
            {{ message|safe }} 
            <!-- |safe is used to render html tags -->
+           <!-- {{ message|safe }}: This renders the actual message text inside the div.
+             The |safe filter is used to indicate that the message should be treated as safe HTML content and not escaped.
+             This allows the message to contain HTML tags that will be rendered as intended. -->
        </div>
    {% endfor %}
  {% endif %}
